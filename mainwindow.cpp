@@ -20,6 +20,10 @@ MainWindow::~MainWindow()
 void MainWindow::on_btnAdd_clicked()
 {
     auto name = this->ui->leditAdd->text().trimmed();
+    if (name.isEmpty()) {
+        this->ui->statusbar->showMessage("You need to insert a name first!");
+        return;
+    }
     studentListModel->addStudent(name);
     this->ui->leditAdd->clear();
 }

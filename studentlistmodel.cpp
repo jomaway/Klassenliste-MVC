@@ -27,9 +27,6 @@ void StudentListModel::addStudent(QString name)
 
 void StudentListModel::removeStudent(int index)
 {
-    // Remove a student from the model.
-    // we need to notify the view about the change, before and after!
-    // Before:
     beginRemoveRows(QModelIndex(), index, index);
     this->studentList.removeAt(index);
     endRemoveRows();
